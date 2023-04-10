@@ -26,7 +26,10 @@ import { gql, useQuery, useLazyQuery, useMutation } from '@apollo/client'
 import classNames from 'classnames'
 import MultiImageInput from 'react-multiple-image-input'
 
-import { cloudinary_upload_url as cloudinaryUploadUrl, cloudinary_products as cloudinaryProducts } from '../../config/config'
+import {
+  cloudinary_upload_url as cloudinaryUploadUrl,
+  cloudinary_products as cloudinaryProducts
+} from '../../config/config'
 
 const GET_CATEGORIES = gql`
   ${subCategories}
