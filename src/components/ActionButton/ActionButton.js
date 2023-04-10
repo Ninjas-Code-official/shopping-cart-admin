@@ -15,15 +15,20 @@ const DELETE_CATEGORY = gql`
 function ActionButton(props) {
   const mutation = props.mutation ? props.mutation : DELETE_CATEGORY
   const query = props.refetchQuery ? props.refetchQuery : GET_CATEGORIES
-  const [isOpen, setIsOpen] = useState(false);
-  var [mutate, { loading: deleteLoading }] = useMutation(mutation, {
+  const [isOpen, setIsOpen] = useState(false)
+  var [{ loading: deleteLoading }] = useMutation(mutation, {
     refetchQueries: [{ query: query }]
   })
   return (
     <>
       {props.editButton && (
         <>
-        {isOpen && <Alert message="Delete feature will available after purchasing product" severity="warning" />}
+          {isOpen && (
+            <Alert
+              message="Delete feature will available after purchasing product"
+              severity="warning"
+            />
+          )}
           <Badge
             href="#pablo"
             onClick={e => {
@@ -45,26 +50,25 @@ function ActionButton(props) {
           visible={deleteLoading}
         />
       ) : (
-          <Badge
-            href="#pablo"
-            color="danger"
-            onClick={e => {
-              e.preventDefault()
-              // mutate({
-              //   variables: {
-              //     id: props.row._id
-              //   }
-              // })
+        <Badge
+          href="#pablo"
+          color="danger"
+          onClick={e => {
+            e.preventDefault()
+            // mutate({
+            //   variables: {
+            //     id: props.row._id
+            //   }
+            // })
 
-              setIsOpen(true)
-              setTimeout(() => {
-                setIsOpen(false);
-              }, 2000);
-
-            }}>
-            {'Delete'}
-          </Badge>
-        )}
+            setIsOpen(true)
+            setTimeout(() => {
+              setIsOpen(false)
+            }, 2000)
+          }}>
+          {'Delete'}
+        </Badge>
+      )}
     </>
   )
 }

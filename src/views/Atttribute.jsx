@@ -83,7 +83,6 @@ const Attribute = props => {
     }
   ]
 
-  const { t } = props
   return (
     <>
       <Header />
