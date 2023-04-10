@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "description": "Ecommero dashboard",
   "main": "index.js",
-  "homepage": "https://ecommero.com/dashboard",
+  "homepage": "https://ecommero.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
